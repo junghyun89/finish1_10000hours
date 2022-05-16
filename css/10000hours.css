@@ -1,0 +1,268 @@
+:root {
+    --purple-color: #5B2386;
+    --yellow-color: #FCEE21;
+    --white-color: #FFF;
+    --dark-yellow-color:#F5DF4D;
+    --dark-gray-color: #747474;
+    --soft-gray-color: #babcbe;
+
+    --large-space: 80px;
+    --medium-space: 50px;
+    --small-space: 20px;
+    --size-modal: 600px;
+    
+    --border-radius: 10px;
+}
+@font-face {
+    font-family: 'OTEnjoystoriesBA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2") format('woff2'),
+    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff") format('woff'),
+    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf") format('opentype');
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+body {
+    background-color: var(--purple-color);
+    color: var(--white-color);
+    font-family: 'GmarketSansMedium';
+    margin-top: var(--medium-space);
+}
+#contents {
+    display: flex;
+    justify-content: center;
+}
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: var(--medium-space);
+}
+.title .clock_img {
+    width: 265px;
+    height: 265px;
+}
+.title .title_img {
+    position: absolute;
+    width: 564px;
+}
+.title .title_img img {
+    width: 100%;
+}
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--large-space);
+}
+.intro .intro_saying {
+    color: var(--dark-yellow-color);
+    font-family: 'OTEnjoystoriesBA';
+    font-size: 2.5rem;
+    margin-bottom: var(--medium-space);
+}
+.intro .explain {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+.intro .quotes {
+    padding-top: 20px;
+}
+.intro .explain p {
+    position: absolute;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+.intro .explain span {
+    font-family: 'GmarketSansBold';
+    font-size: 1.25rem;
+}
+.inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    margin-top: var(--medium-space);
+    margin-bottom: var(--large-space);
+}
+.inputs div {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--small-space);
+}
+.inputs input {
+    padding: calc(var(--small-space) * 0.9);
+    margin: 0 calc(var(--small-space) * 0.9);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.25rem;
+    font-family: 'GmarketSansMedium';
+}
+.inputs input::placeholder {
+    color: var(--soft-gray-color);
+}
+button {
+    display: flex;
+    align-items: center;
+    font-family: 'GmarketSansBold';
+    font-size: 1.25rem;
+    color: var(--purple-color);
+    background-color: var(--yellow-color);
+    border: none;
+    border-radius: calc(var(--border-radius) * 3);
+    padding: calc(var(--small-space) * 0.7) var(--medium-space);
+    cursor: pointer;
+    word-break: keep-all;
+}
+.start {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--large-space);
+}
+.start .btn_wrap {
+    position: relative;
+}
+.start .click_img {
+    position: absolute;
+    right: -75px;
+    bottom: -25px;
+}
+.result_loading {
+    display: none;
+    justify-content: center;
+    margin-bottom: var(--large-space);
+}
+.result_loading .img_wrap {
+    width: 100px;
+    height: 100px;
+}
+.result_loading .img_wrap img {
+    width: 100%;
+    animation: rotate 1.1s infinite linear;
+}
+.result {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.5;
+    margin-bottom: var(--large-space);
+}
+.result_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.result .result_wrap div {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+}
+.result span {
+    padding: 0 var(--small-space);
+    font-family: 'GmarketSansBold';
+    font-size: 4.375rem;
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: calc(var(--large-space) * 0.8);
+}
+.buttons .share_btn {
+    background-color: var(--white-color);
+    margin-left: var(--small-space);
+    height: 100%;
+}
+#modal {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+#modal .modal_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: var(--size-modal);
+    height: var(--size-modal);
+    background-color: var(--white-color);
+    border-radius: calc(var(--border-radius) * 2);
+}
+#modal .cheer {
+    font-family: 'OTEnjoystoriesBA';
+    color: var(--purple-color);
+    text-align: center;
+}
+#modal .cheer h1 {
+    font-size: 5rem;
+}
+#modal .cheer h3 {
+    font-size: 1.875rem;
+}
+#modal .licat_img {
+    margin-bottom: var(--small-space);
+}
+#modal .close_btn {
+    box-shadow: 0px 6px 16px 0px rgb(0, 0, 0, 15%);
+    margin-bottom: var(--small-space);
+}
+#modal .btn p{
+    color: var(--dark-gray-color);
+    font-size: 0.813rem;
+    text-align: center;
+}
+#copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: var(--medium-space);
+}
+#copyright p {
+    font-size: 0.625rem;
+    line-height: 1.5;
+    padding: var(--small-space) 0;
+    text-align: center;
+}
